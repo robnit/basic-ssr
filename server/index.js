@@ -1,8 +1,8 @@
-import path from 'path';
-import fs from 'fs';
+require('ignore-styles');
 
-import React from 'react';
-import express from 'express';
-import ReactDOMServer from 'react-dom/server';
+require('@babel/register')({
+  ignore: [/node_modules/],
+  presets: ['@babel/preset-env', '@babel/preset-react'],
+});
 
-const app = express();
+require('./server');
